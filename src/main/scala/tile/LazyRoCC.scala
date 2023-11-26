@@ -406,7 +406,7 @@ object OpcodeSet {
 }
 
 class RoccCommandRouter(opcodes: Seq[OpcodeSet])(implicit p: Parameters)
-    extends CoreModule()(p) {
+   extends CoreModule()(p) {
   val io = IO(new Bundle {
     val in = Flipped(Decoupled(new RoCCCommand))
     val out = Vec(opcodes.size, Decoupled(new RoCCCommand))
